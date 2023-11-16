@@ -1,0 +1,20 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+lalrpop = "0.20"
+
+[dependencies]
+lalrpop-util = { version = "0.20", features = ["lexer"] }
+regex = "1.7"
+tokio = { version = "1.24", features = ["full"] }
+glium = "0.32"
+mat = { path = "../mat" }
+dashmap = "5.1"
+def = { path = "../def" }
+noise = "0.7"
+arrayvec = "0.7"
+image = "0.24"
+lalrpop = "0.19"

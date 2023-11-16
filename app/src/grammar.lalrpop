@@ -1,0 +1,29 @@
+use crate::Cmd;
+use def::Block;
+
+grammar;
+
+/// This is an LR1 grammar for user command parsing
+///
+/// Very complex patern is allowed by LR1 grammars, open wide
+/// possibilities in command shape and syntax, as well as strong
+/// and detailed syntax error handling
+
+pub Cmd: Cmd = {
+    "fly" <b:Bool> => Cmd::Fly(b),
+    "placing" <b:Block> => Cmd::BlockPlacing(b),
+}
+
+Bool: bool = {
+    "true" => true,
+    "false" => false,
+}
+
+Block: Block = {
+    "stone" => Block::Stone,
+    "dirt" => Block::Dirt,
+    "grass" => Block::Grass,
+    "sand" => Block::Sand,
+    "brick" => Block::Brick,
+    "glass" => Block::Glass,
+}
